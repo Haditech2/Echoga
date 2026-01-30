@@ -41,9 +41,9 @@ ALLOWED_HOSTS = [
 ]
 
 # Cloudinary Configuration
-CLOUDINARY_CLOUD_NAME = config('CLOUDINARY_CLOUD_NAME')
-CLOUDINARY_API_KEY = config('CLOUDINARY_API_KEY')
-CLOUDINARY_API_SECRET = config('CLOUDINARY_API_SECRET')
+CLOUDINARY_CLOUD_NAME = config('CLOUDINARY_CLOUD_NAME', default='dafag8jhg')
+CLOUDINARY_API_KEY = config('CLOUDINARY_API_KEY', default='256576913286665')
+CLOUDINARY_API_SECRET = config('CLOUDINARY_API_SECRET', default='ZFZAXBI3oXwo-y64FA9dY0p2RPo')
 
 # Cloudinary Storage Configuration
 CLOUDINARY_STORAGE = {
@@ -109,12 +109,25 @@ WSGI_APPLICATION = 'echoga_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# Use SQLite for development and production (since Vercel doesn't support persistent databases)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': ':memory:',  # Use in-memory database for serverless
     }
 }
+
+# For production with persistent database, you would use something like:
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#         'PORT': config('DB_PORT', default='5432'),
+#     }
+# }
 
 
 # Password validation

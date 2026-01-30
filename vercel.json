@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "echoga_project/wsgi.py",
+      "src": "api/index.py",
       "use": "@vercel/python",
-      "config": { 
-        "maxLambdaSize": "15mb", 
+      "config": {
+        "maxLambdaSize": "15mb",
         "runtime": "python3.9"
       }
     }
@@ -17,10 +17,15 @@
     },
     {
       "src": "/(.*)",
-      "dest": "echoga_project/wsgi.py"
+      "dest": "/api/index.py"
     }
   ],
   "env": {
     "DJANGO_SETTINGS_MODULE": "echoga_project.settings"
+  },
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "**"
+    }
   }
 }
