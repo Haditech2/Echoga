@@ -1,8 +1,13 @@
 from django.contrib import admin
-from .models import NewsArticle, Testimonial, NewsletterSubscriber, ContactMessage, VolunteerApplication, GalleryImage
+from .models import NewsArticle, Testimonial, NewsletterSubscriber, ContactMessage, VolunteerApplication, GalleryImage, HelpRequest
 
 
-@admin.register(NewsArticle)
+@admin.register(HelpRequest)
+class HelpRequestAdmin(admin.ModelAdmin):
+    list_display = ('name', 'help_type', 'subject', 'submitted_date', 'is_read')
+    list_filter = ('help_type', 'is_read', 'submitted_date')
+    search_fields = ('name', 'email', 'subject', 'message')
+    readonly_fields = ('submitted_date',)
 class NewsArticleAdmin(admin.ModelAdmin):
     list_display = ['title', 'author', 'published_date', 'is_featured']
     list_filter = ['is_featured', 'published_date']
