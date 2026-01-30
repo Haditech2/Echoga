@@ -1,0 +1,55 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+            <img src="{% static 'images/logo.png' %}" alt="ECHOGA Foundation Logo">
+            <span>ECHOGA</span>
+            <!-- Founder mini portrait in navbar -->
+            <img src="{% static 'images/founder.png' %}" alt="Hon. Ismaila Muhammed Attah" 
+                 class="rounded-circle ms-2" width="35" height="35" style="object-fit: cover; border: 2px solid #FFD700;">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="{% url 'about_founder' %}">About Founder</a></li>
+                        <li><a class="dropdown-item" href="{% url 'about_foundation' %}">About Foundation</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'programs' %}">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'news' %}">News & Impact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Add padding to body to account for fixed navbar -->
+<style>
+    body {
+        padding-top: 80px;
+    }
+</style>

@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Programs - ECHOGA Foundation{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="py-5 bg-primary-green text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4">Our Programs</h1>
+                <p class="lead">Comprehensive Initiatives for Sustainable Community Development</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Programs Overview -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Transforming Lives Through Action</h2>
+            <p>Our programs address critical needs in education, healthcare, youth development, and community
+                empowerment</p>
+        </div>
+    </div>
+</section>
+
+<!-- Founder's Vision for Programs -->
+<section class="py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-5">
+                    <img src="{% static 'images/founder-5.jpg' %}" alt="Hon. Ismaila Muhammed Attah"
+                        class="rounded-circle shadow mb-3" width="150" height="150" style="object-fit: cover;">
+                    <h5 class="text-primary-green">Hon. Ismaila Muhammed Attah's Vision</h5>
+                    <p class="lead fst-italic mx-auto" style="max-width: 800px;">"Our programs are carefully designed
+                        not just to provide temporary relief, but to build sustainable structures that empower
+                        individuals to become agents of change in their own communities."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Programs -->
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <i class="fas fa-book-reader fa-5x text-gold mb-3"></i>
+                <h2 class="text-primary-green">Education Programs</h2>
+                <p class="lead">Empowering the next generation through quality education</p>
+                <p>Our education initiatives provide comprehensive support to students from underprivileged backgrounds,
+                    ensuring they have access to quality learning opportunities.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-graduation-cap text-gold me-2"></i>Scholarship Program
+                        </h5>
+                        <p class="card-text">Full and partial scholarships for deserving students from primary to
+                            tertiary levels.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-book text-gold me-2"></i>Learning Materials Distribution
+                        </h5>
+                        <p class="card-text">Providing textbooks, stationery, and educational resources to schools and
+                            students.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-school text-gold me-2"></i>School Infrastructure</h5>
+                        <p class="card-text">Building and renovating classrooms, libraries, and educational facilities.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-chalkboard-teacher text-gold me-2"></i>Teacher Training
+                        </h5>
+                        <p class="card-text">Professional development programs for educators to enhance teaching
+                            quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Youth Empowerment -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                <i class="fas fa-user-graduate fa-5x text-gold mb-3"></i>
+                <h2 class="text-primary-green">Youth Empowerment</h2>
+                <p class="lead">Building skills and creating opportunities for young people</p>
+                <p>We invest in the potential of young people through skills training, mentorship, and entrepreneurship
+                    support.</p>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-tools text-gold me-2"></i>Skills Acquisition Training
+                        </h5>
+                        <p class="card-text">Vocational training in various trades including technology, agriculture,
+                            and crafts.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-handshake text-gold me-2"></i>Mentorship Program</h5>
+                        <p class="card-text">Connecting youth with experienced professionals for guidance and career
+                            development.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-briefcase text-gold me-2"></i>Entrepreneurship Support
+                        </h5>
+                        <p class="card-text">Business training, startup capital, and ongoing support for young
+                            entrepreneurs.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-users-cog text-gold me-2"></i>Leadership Development
+                        </h5>
+                        <p class="card-text">Programs to develop leadership skills and civic engagement among youth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Healthcare Programs -->
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <i class="fas fa-hospital fa-5x text-gold mb-3"></i>
+                <h2 class="text-primary-green">Healthcare Outreach</h2>
+                <p class="lead">Improving health outcomes in underserved communities</p>
+                <p>Our healthcare initiatives provide essential medical services and health education to communities
+                    with limited access to healthcare.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-stethoscope text-gold me-2"></i>Medical Outreach</h5>
+                        <p class="card-text">Free medical consultations, treatments, and medications in rural
+                            communities.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-heartbeat text-gold me-2"></i>Health Awareness Campaigns
+                        </h5>
+                        <p class="card-text">Education on preventive healthcare, hygiene, and disease prevention.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-clinic-medical text-gold me-2"></i>Healthcare Facility
+                            Support</h5>
+                        <p class="card-text">Equipment donation and infrastructure improvement for health centers.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-baby text-gold me-2"></i>Maternal & Child Health</h5>
+                        <p class="card-text">Specialized programs for mothers and children's health and nutrition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Community Development -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                <i class="fas fa-city fa-5x text-gold mb-3"></i>
+                <h2 class="text-primary-green">Community Development</h2>
+                <p class="lead">Building sustainable infrastructure and economic opportunities</p>
+                <p>We work with communities to develop infrastructure and create economic opportunities for long-term
+                    prosperity.</p>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-tint text-gold me-2"></i>Water & Sanitation</h5>
+                        <p class="card-text">Providing clean water access through boreholes and sanitation facilities.
+                        </p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-road text-gold me-2"></i>Infrastructure Projects</h5>
+                        <p class="card-text">Road construction, electrification, and community facility development.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-seedling text-gold me-2"></i>Agricultural Support</h5>
+                        <p class="card-text">Training, tools, and resources for farmers to improve productivity.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-chart-line text-gold me-2"></i>Economic Empowerment</h5>
+                        <p class="card-text">Microfinance, cooperative development, and market access support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Humanitarian Aid -->
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <i class="fas fa-hands-helping fa-5x text-gold mb-3"></i>
+                <h2 class="text-primary-green">Humanitarian Aid</h2>
+                <p class="lead">Providing relief and support in times of need</p>
+                <p>Our humanitarian programs respond to emergencies and provide essential support to vulnerable
+                    populations.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-box-open text-gold me-2"></i>Emergency Relief</h5>
+                        <p class="card-text">Rapid response to disasters with food, shelter, and essential supplies.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-utensils text-gold me-2"></i>Food Security</h5>
+                        <p class="card-text">Food distribution programs for vulnerable families and communities.</p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-home text-gold me-2"></i>Shelter Support</h5>
+                        <p class="card-text">Housing assistance for displaced persons and vulnerable populations.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-shield-alt text-gold me-2"></i>Disaster Preparedness
+                        </h5>
+                        <p class="card-text">Community training and resources for disaster risk reduction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary-green text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Support Our Programs</h2>
+        <p class="lead mb-4">Your contribution can help us expand our reach and impact more lives</p>
+        <a href="{% url 'contact' %}\" class=\"btn btn-gold btn-lg\">Partner With Us</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block founder_widget %}
+{% include 'components/founder_floating.html' %}
+{% endblock %}

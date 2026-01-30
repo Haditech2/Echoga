@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Test - ECHOGA Foundation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .image-card {
+            border: 2px solid #1B5E20;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .image-card h3 {
+            color: #1B5E20;
+            margin-top: 10px;
+        }
+
+        h1 {
+            color: #1B5E20;
+            text-align: center;
+        }
+
+        .status {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ECHOGA Foundation - Founder Images Test</h1>
+
+    <div class="status">
+        <h2>Image Status Check</h2>
+        <p><strong>Total Images:</strong> 5 founder photos uploaded</p>
+        <p><strong>Location:</strong> static/images/</p>
+        <p><strong>Used in:</strong> About Founder page</p>
+    </div>
+
+    <div class="image-grid">
+        <div class="image-card">
+            <img src="/static/images/founder-1.jpg" alt="Founder Photo 1">
+            <h3>founder-1.jpg</h3>
+            <p>Primary photo used on About Founder page</p>
+        </div>
+
+        <div class="image-card">
+            <img src="/static/images/founder-2.jpg" alt="Founder Photo 2">
+            <h3>founder-2.jpg</h3>
+            <p>Campaign poster with APC branding</p>
+        </div>
+
+        <div class="image-card">
+            <img src="/static/images/founder-3.jpg" alt="Founder Photo 3">
+            <h3>founder-3.jpg</h3>
+            <p>Professional portrait</p>
+        </div>
+
+        <div class="image-card">
+            <img src="/static/images/founder-4.jpg" alt="Founder Photo 4">
+            <h3>founder-4.jpg</h3>
+            <p>Casual photo with ECHOGA cap</p>
+        </div>
+
+        <div class="image-card">
+            <img src="/static/images/founder-5.jpg" alt="Founder Photo 5">
+            <h3>founder-5.jpg</h3>
+            <p>Formal portrait</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center;">
+        <a href="/about-founder/"
+            style="background: #1B5E20; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block;">
+            View About Founder Page
+        </a>
+        <a href="/"
+            style="background: #FFD700; color: #1B5E20; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin-left: 10px;">
+            Back to Home
+        </a>
+    </div>
+</body>
+
+</html>

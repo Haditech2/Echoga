@@ -1,0 +1,76 @@
+{% load static %}
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <div class="d-flex align-items-start mb-3">
+                    <img src="{% static 'images/founder-1.jpg' %}" alt="Hon. Ismaila Muhammed Attah"
+                        class="rounded-circle me-3 border border-gold" width="60" height="60"
+                        style="object-fit: cover;">
+                    <div>
+                        <h5 class="text-gold mb-1">About ECHOGA Foundation</h5>
+                        <small class="text-muted">Founded by Hon. Ismaila Muhammed Attah</small>
+                    </div>
+                </div>
+                <p>ECHOGA Foundation is dedicated to empowering
+                    communities through education, healthcare, youth development, and sustainable community initiatives
+                    across Nigeria.</p>
+                <p class="mb-0"><em>"Your Progress, Our Commitment!"</em></p>
+                <div class="social-links mt-3">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about_founder' %}">About Founder</a></li>
+                    <li><a href="{% url 'about_foundation' %}">About Foundation</a></li>
+                    <li><a href="{% url 'programs' %}">Programs</a></li>
+                </ul>
+            </div>
+
+            <!-- Get Involved -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>Get Involved</h5>
+                <ul>
+                    <li><a href="{% url 'get_involved' %}">Donate</a></li>
+                    <li><a href="{% url 'get_involved' %}">Volunteer</a></li>
+                    <li><a href="{% url 'news' %}">News & Impact</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        Nigeria
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2"></i>
+                        <a href="mailto:info@echogafoundation.org">info@echogafoundation.org</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-phone me-2"></i>
+                        <a href="tel:+234">+234 XXX XXX XXXX</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="mb-0">&copy; {% now "Y" %} ECHOGA Foundation. All rights reserved. | <strong>Empowering
+                    Communities,
+                    Transforming Lives, Building a Better Nigeria</strong></p>
+        </div>
+    </div>
+</footer>

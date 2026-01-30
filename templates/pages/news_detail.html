@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ article.title }} - ECHOGA Foundation{% endblock %}
+
+{% block content %}
+<!-- Article Header -->
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'news' %}">News</a></li>
+                        <li class="breadcrumb-item active">{{ article.title|truncatewords:5 }}</li>
+                    </ol>
+                </nav>
+
+                <h1 class="display-5 mb-3">{{ article.title }}</h1>
+                <p class="text-muted">
+                    <i class="fas fa-calendar me-2"></i>{{ article.published_date|date:"F d, Y" }}
+                    <i class="fas fa-user ms-3 me-2"></i>{{ article.author }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Article Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                {% if article.featured_image %}
+                <img src="{{ article.featured_image.url }}" alt="{{ article.title }}"
+                    class="img-fluid rounded shadow mb-4">
+                {% endif %}
+
+                <div class="article-content">
+                    {{ article.content|linebreaks }}
+                </div>
+
+                <!-- Founder Spotlight After Article -->
+                <div class="card border-0 shadow-sm bg-light mt-5 mb-5 overflow-hidden">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-3">
+                            <img src="{% static 'images/founder-3.jpg' %}" class="img-fluid h-100 object-fit-cover"
+                                alt="Hon. Ismaila Muhammed Attah" style="min-height: 200px;">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body p-4">
+                                <h5 class="card-title text-primary-green mb-2">Message from Hon. Ismaila Muhammed Attah
+                                </h5>
+                                <p class="card-text small">"Every project we undertake, every story we share, is driven
+                                    by our commitment to seeing our communities thrive. We invite you to be part of this
+                                    transformation."</p>
+                                <a href="{% url 'get_involved' %}" class="btn btn-gold btn-sm mt-2">Join Our Mission</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="text-center">
+                    <h4 class="mb-3">Share this story</h4>
+                    <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent News -->
+{% if recent_news %}
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="section-title">
+            <h2>More Stories</h2>
+        </div>
+        <div class="row g-4">
+            {% for news in recent_news %}
+            <div class="col-md-4">
+                <div class="card h-100">
+                    {% if news.featured_image %}
+                    <img src="{{ news.featured_image.url }}" class="card-img-top" alt="{{ news.title }}">
+                    {% else %}
+                    <img src="https://via.placeholder.com/400x250/1B5E20/FFFFFF?text={{ news.title|truncatewords:2 }}"
+                        class="card-img-top" alt="{{ news.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ news.title }}</h5>
+                        <p class="text-muted small"><i class="fas fa-calendar me-2"></i>{{ news.published_date|date:"M
+                            d, Y" }}</p>
+                        <a href="{% url 'news_detail' news.slug %}" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}

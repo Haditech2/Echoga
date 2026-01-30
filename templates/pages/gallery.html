@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery - ECHOGA Foundation{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="py-5 bg-primary-green text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4">Gallery</h1>
+                <p class="lead">Moments from Our Programs and Community Impact</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Filter -->
+<section class="py-4 bg-off-white">
+    <div class="container">
+        <!-- Founder's Message about Gallery -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8">
+                <div class="text-center">
+                    <img src="{% static 'images/founder-3.jpg' %}" alt="Hon. Ismaila Muhammed Attah" 
+                         class="rounded-circle mb-3" width="80" height="80" style="object-fit: cover;">
+                    <p class="fst-italic">"Every image tells a story of hope, transformation, and community spirit. These moments capture the essence of our shared journey toward a better tomorrow."</p>
+                    <small class="text-muted">- Hon. Ismaila Muhammed Attah</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <a href="{% url 'gallery' %}"
+                class="btn {% if current_category == 'all' %}btn-primary{% else %}btn-outline-primary{% endif %} gallery-filter-btn m-2">All</a>
+            <a href="{% url 'gallery' %}?category=events"
+                class="btn {% if current_category == 'events' %}btn-primary{% else %}btn-outline-primary{% endif %} gallery-filter-btn m-2">Events</a>
+            <a href="{% url 'gallery' %}?category=programs"
+                class="btn {% if current_category == 'programs' %}btn-primary{% else %}btn-outline-primary{% endif %} gallery-filter-btn m-2">Programs</a>
+            <a href="{% url 'gallery' %}?category=community"
+                class="btn {% if current_category == 'community' %}btn-primary{% else %}btn-outline-primary{% endif %} gallery-filter-btn m-2">Community</a>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-5">
+    <div class="container">
+        {% if page_obj %}
+        <div class="row g-4">
+            {% for image in page_obj %}
+            <div class="col-lg-4 col-md-6">
+                <div class="gallery-item">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <h6 class="mt-2 text-center">{{ image.title }}</h6>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        {% if page_obj.has_other_pages %}
+        <nav aria-label="Gallery pagination" class="mt-5">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link"
+                        href="?page={{ page_obj.previous_page_number }}{% if current_category != 'all' %}&category={{ current_category }}{% endif %}">Previous</a>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} <li class="page-item"><a
+                        class="page-link"
+                        href="?page={{ num }}{% if current_category != 'all' %}&category={{ current_category }}{% endif %}">{{
+                        num }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link"
+                            href="?page={{ page_obj.next_page_number }}{% if current_category != 'all' %}&category={{ current_category }}{% endif %}">Next</a>
+                    </li>
+                    {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+        {% else %}
+        <div class="text-center py-5">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8">
+                    <img src="{% static 'images/founder-4.jpg' %}" alt="Hon. Ismaila Muhammed Attah" 
+                         class="rounded-circle mb-3" width="120" height="120" style="object-fit: cover;">
+                    <h3>Gallery Coming Soon</h3>
+                    <p class="text-muted">Our photo gallery will showcase the incredible moments from our community programs and events. Stay tuned as we continue documenting our journey of transformation.</p>
+                    <p class="fst-italic">"Every picture tells a story of hope and progress in our communities." - Hon. Ismaila Muhammed Attah</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

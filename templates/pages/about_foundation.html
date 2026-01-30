@@ -1,0 +1,286 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About ECHOGA Foundation{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="py-5 bg-primary-green text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4">About ECHOGA Foundation</h1>
+                <p class="lead">Empowering Communities Through Sustainable Development</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Foundation Overview -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="mb-4">Who We Are</h2>
+                <p>ECHOGA Foundation is a nonprofit organization dedicated to empowering communities through sustainable
+                    development initiatives in education, healthcare, youth empowerment, and humanitarian services.</p>
+                <p>Founded by Hon. Ismaila Muhammed Attah, the foundation operates with a vision of creating lasting
+                    positive change in underserved communities across Nigeria.</p>
+                <p>We believe in a holistic approach to community development, addressing immediate needs while building
+                    long-term capacity for self-sufficiency and growth.</p>
+                <div class="mt-4">
+                    <a href="{% url 'programs' %}" class="btn btn-primary">Explore Our Programs</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Replace hero-bg with founder image -->
+                <img src="{% static 'images/founder-2.jpg' %}" alt="Hon. Ismaila Muhammed Attah - ECHOGA Foundation" class="img-fluid rounded shadow">
+                <p class="text-center mt-2 text-muted"><small>Hon. Ismaila Muhammed Attah, Founder & Chairman</small></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission, Vision, Values -->
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-bullseye fa-4x text-gold mb-3"></i>
+                        <h3 class="card-title">Our Mission</h3>
+                        <p class="card-text">To empower communities through sustainable development initiatives that
+                            create lasting positive change in education, healthcare, and economic opportunities,
+                            fostering self-reliance and prosperity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-eye fa-4x text-gold mb-3"></i>
+                        <h3 class="card-title">Our Vision</h3>
+                        <p class="card-text">A thriving society where every individual has access to quality education,
+                            healthcare, and opportunities for personal and community growth, regardless of their
+                            socioeconomic background.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-heart fa-4x text-gold mb-3"></i>
+                        <h3 class="card-title">Our Values</h3>
+                        <p class="card-text">Integrity, compassion, excellence, transparency, community participation,
+                            and sustainable impact guide all our initiatives and partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Focus Areas -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Core Focus Areas</h2>
+            <p>Comprehensive initiatives for holistic community development</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="program-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h4>Education</h4>
+                    <p>Scholarships, learning materials, school infrastructure, and teacher training programs.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="program-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Youth Empowerment</h4>
+                    <p>Skills acquisition, mentorship, entrepreneurship support, and leadership development.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="program-card">
+                    <i class="fas fa-hospital"></i>
+                    <h4>Healthcare</h4>
+                    <p>Medical outreach, health awareness, facility support, and preventive care programs.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="program-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>Humanitarian Aid</h4>
+                    <p>Emergency relief, food security, shelter support, and disaster response.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Approach -->
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Approach</h2>
+            <p>How we create sustainable impact</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="bg-primary-green text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 80px; height: 80px;">
+                        <span class="fs-2 fw-bold">1</span>
+                    </div>
+                    <h5>Assess</h5>
+                    <p>Identify community needs through engagement and research</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="bg-primary-green text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 80px; height: 80px;">
+                        <span class="fs-2 fw-bold">2</span>
+                    </div>
+                    <h5>Plan</h5>
+                    <p>Develop sustainable solutions with community participation</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="bg-primary-green text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 80px; height: 80px;">
+                        <span class="fs-2 fw-bold">3</span>
+                    </div>
+                    <h5>Implement</h5>
+                    <p>Execute programs with excellence and transparency</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center">
+                    <div class="bg-primary-green text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 80px; height: 80px;">
+                        <span class="fs-2 fw-bold">4</span>
+                    </div>
+                    <h5>Evaluate</h5>
+                    <p>Monitor impact and ensure continuous improvement</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Milestones -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Journey</h2>
+            <p>Key milestones in our mission to empower communities</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-gold">Foundation Established</h5>
+                                <p class="card-text">ECHOGA Foundation was established with a vision to create lasting
+                                    positive change in underserved communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-gold">First Education Program</h5>
+                                <p class="card-text">Launched scholarship program providing educational support to
+                                    hundreds of students.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-gold">Healthcare Outreach</h5>
+                                <p class="card-text">Initiated medical outreach programs serving thousands in rural
+                                    communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-gold">Youth Empowerment Initiative</h5>
+                                <p class="card-text">Launched skills training and entrepreneurship programs for young
+                                    people.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Founder's Leadership -->
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Founder in Action</h2>
+            <p>Hon. Ismaila Muhammed Attah - Leading with Purpose</p>
+        </div>
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <img src="{% static 'images/founder-1.jpg' %}" alt="Hon. Ismaila Muhammed Attah"
+                    class="img-fluid rounded shadow">
+                <p class="text-center mt-2"><strong>Professional Portrait</strong></p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'images/founder-3.jpg' %}" alt="Hon. Ismaila Muhammed Attah"
+                    class="img-fluid rounded shadow">
+                <p class="text-center mt-2"><strong>Community Engagement</strong></p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <img src="{% static 'images/founder-4.jpg' %}" alt="Hon. Ismaila Muhammed Attah - ECHOGA"
+                    class="img-fluid rounded shadow">
+                <p class="text-center mt-2"><strong>Grassroots Connection</strong></p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/founder-2.jpg' %}" alt="Hon. Ismaila Muhammed Attah - Political Leadership"
+                    class="img-fluid rounded shadow">
+                <p class="text-center mt-2"><strong>Political Leadership</strong></p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/founder-5.jpg' %}" alt="Hon. Ismaila Muhammed Attah"
+                    class="img-fluid rounded shadow">
+                <p class="text-center mt-2"><strong>Visionary Leader</strong></p>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="{% url 'about_founder' %}" class="btn btn-primary btn-lg">Learn More About Hon. Attah</a>
+        </div>
+    </div>
+</section>
+
+<!-- Include Founder Carousel -->
+{% include 'components/founder_carousel.html' %}
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary-green text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Join Our Mission</h2>
+        <p class="lead mb-4">Partner with us in creating sustainable change and empowering communities</p>
+        <a href="{% url 'get_involved' %}" class="btn btn-gold btn-lg me-3">Get Involved</a>
+        <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Contact Us</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block founder_widget %}
+{% include 'components/founder_floating.html' %}
+{% endblock %}

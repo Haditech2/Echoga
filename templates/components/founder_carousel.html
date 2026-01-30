@@ -1,0 +1,123 @@
+{% load static %}
+<!-- Founder Image Carousel Component -->
+<div class="founder-carousel-section py-5 bg-light">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h3>Hon. Ismaila Muhammed Attah in Action</h3>
+            <p class="text-muted">Witnessing our founder's dedication to community service</p>
+        </div>
+        
+        <div id="founderCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#founderCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#founderCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#founderCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#founderCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#founderCarousel" data-bs-slide-to="4"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="card border-0 shadow">
+                                <img src="{% static 'images/founder-1.jpg' %}" class="card-img-top" alt="Hon. Ismaila Muhammed Attah - Professional Portrait" style="height: 400px; object-fit: cover;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Professional Leadership</h5>
+                                    <p class="card-text">Hon. Attah in his role as a distinguished leader and public servant.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="card border-0 shadow">
+                                <img src="{% static 'images/founder-2.jpg' %}" class="card-img-top" alt="Hon. Ismaila Muhammed Attah - Political Leadership" style="height: 400px; object-fit: cover;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Political Service</h5>
+                                    <p class="card-text">Serving the people through dedicated political leadership and representation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="card border-0 shadow">
+                                <img src="{% static 'images/founder-3.jpg' %}" class="card-img-top" alt="Hon. Ismaila Muhammed Attah - Community Engagement" style="height: 400px; object-fit: cover;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Community Engagement</h5>
+                                    <p class="card-text">Directly connecting with community members and understanding their needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="card border-0 shadow">
+                                <img src="{% static 'images/founder-4.jpg' %}" class="card-img-top" alt="Hon. Ismaila Muhammed Attah - Grassroots Connection" style="height: 400px; object-fit: cover;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Grassroots Connection</h5>
+                                    <p class="card-text">Building strong relationships at the grassroots level for sustainable development.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="card border-0 shadow">
+                                <img src="{% static 'images/founder-5.jpg' %}" class="card-img-top" alt="Hon. Ismaila Muhammed Attah - Visionary Leader" style="height: 400px; object-fit: cover;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Visionary Leadership</h5>
+                                    <p class="card-text">Leading with vision and purpose to create lasting positive change.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#founderCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#founderCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="{% url 'about_founder' %}" class="btn btn-primary btn-lg">Learn More About Hon. Attah</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #1B5E20;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-indicators button {
+    background-color: #FFD700;
+}
+
+.carousel-indicators button.active {
+    background-color: #1B5E20;
+}
+</style>

@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Get Involved - ECHOGA Foundation{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="py-5 bg-primary-green text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4">Get Involved</h1>
+                <p class="lead">Join Us in Making a Difference</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-4">Your Support Transforms Lives</h2>
+                <p class="lead">Whether through volunteering or partnerships, your involvement helps us
+                    create lasting positive change in communities across Nigeria.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Founder's Call to Action -->
+<section class="py-4 bg-off-white">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow border-0 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{% static 'images/founder-4.jpg' %}" class="img-fluid h-100 object-fit-cover"
+                                alt="Hon. Ismaila Muhammed Attah" style="min-height: 300px;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-4 p-lg-5 d-flex flex-column justify-content-center h-100">
+                                <h3 class="card-title text-primary-green mb-3">A Personal Invitation from Hon. Attah
+                                </h3>
+                                <p class="card-text fs-5 mb-4">"We cannot build the future we desire alone. It requires
+                                    the collective effort of every well-meaning citizen. I invite you to join me in this
+                                    journey of transformation. Your time, your skills, and your partnership are the
+                                    building blocks of a greater community."</p>
+                                <div>
+                                    <p class="mb-0 fw-bold">Hon. Ismaila Muhammed Attah</p>
+                                    <p class="text-muted small">Founder & Chairman</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ways to Get Involved -->
+<section class="py-5 bg-off-white">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="fas fa-hands-helping fa-4x text-gold mb-3"></i>
+                        <h4 class="card-title">Volunteer</h4>
+                        <p class="card-text">Share your time, skills, and expertise to directly impact lives in our
+                            communities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="fas fa-handshake fa-4x text-gold mb-3"></i>
+                        <h4 class="card-title">Partner</h4>
+                        <p class="card-text">Collaborate with us as an organization to amplify our collective impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Volunteer Section -->
+<section class="py-5 bg-off-white" id="volunteer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <!-- Add founder image to volunteer section -->
+                <div class="text-center mb-4">
+                    <img src="{% static 'images/founder-1.jpg' %}" alt="Hon. Ismaila Muhammed Attah" 
+                         class="rounded-circle shadow" width="100" height="100" style="object-fit: cover;">
+                    <p class="fst-italic mt-2 text-primary-green">"Volunteers are the heart of our mission. Together, we create the change we wish to see."</p>
+                </div>
+                
+                <h2 class="mb-4">Become a Volunteer</h2>
+                <p class="lead">Share your skills and make a direct impact</p>
+                <p>We welcome volunteers from all backgrounds and skill levels. Whether you can offer a few hours a
+                    month or want to commit to a long-term project, your contribution matters.</p>
+
+                <div class="mt-4">
+                    <h5 class="mb-3">Volunteer Opportunities:</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-arrow-right text-gold me-2"></i>Teaching and tutoring</li>
+                        <li class="mb-2"><i class="fas fa-arrow-right text-gold me-2"></i>Healthcare and medical
+                            services</li>
+                        <li class="mb-2"><i class="fas fa-arrow-right text-gold me-2"></i>Skills training and mentorship
+                        </li>
+                        <li class="mb-2"><i class="fas fa-arrow-right text-gold me-2"></i>Event organization and support
+                        </li>
+                        <li class="mb-2"><i class="fas fa-arrow-right text-gold me-2"></i>Administrative and
+                            professional services</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card shadow-lg">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-4">Volunteer Application</h4>
+                        <form method="post" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                {{ volunteer_form.name }}
+                            </div>
+                            <div class="mb-3">
+                                {{ volunteer_form.email }}
+                            </div>
+                            <div class="mb-3">
+                                {{ volunteer_form.phone }}
+                            </div>
+                            <div class="mb-3">
+                                {{ volunteer_form.skills }}
+                            </div>
+                            <div class="mb-3">
+                                {{ volunteer_form.message }}
+                            </div>
+                            <button type="submit" name="volunteer_submit" class="btn btn-primary btn-lg w-100">Submit
+                                Application</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partnership Section -->
+<section class="py-5" id="partner">
+    <div class="container">
+        <div class="section-title">
+            <h2>Partner With Us</h2>
+            <p>Collaborate for greater impact</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="fas fa-building fa-3x text-gold mb-3"></i>
+                        <h5 class="card-title">Corporate Partnerships</h5>
+                        <p class="card-text">CSR programs and employee engagement initiatives</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="fas fa-university fa-3x text-gold mb-3"></i>
+                        <h5 class="card-title">Institutional Partners</h5>
+                        <p class="card-text">Collaboration with educational and healthcare institutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="fas fa-globe fa-3x text-gold mb-3"></i>
+                        <h5 class="card-title">NGO Partnerships</h5>
+                        <p class="card-text">Joint programs with other nonprofit organizations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="fas fa-landmark fa-3x text-gold mb-3"></i>
+                        <h5 class="card-title">Government Relations</h5>
+                        <p class="card-text">Collaboration with government agencies and programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <p class="lead mb-4">Interested in partnering with us?</p>
+            <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Get in Touch</a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary-green text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Ready to Make a Difference?</h2>
+        <p class="lead mb-4">Your involvement can transform lives and build stronger communities</p>
+        <a href="#volunteer" class="btn btn-gold btn-lg me-3">Volunteer Today</a>
+        <a href="#partner" class="btn btn-outline-light btn-lg">Partner With Us</a>
+    </div>
+</section>
+{% endblock %}
