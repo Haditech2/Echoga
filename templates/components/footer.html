@@ -1,11 +1,12 @@
 {% load static %}
+{% load cloudinary_tags %}
 <footer class="footer">
     <div class="container">
         <div class="row">
             <!-- About Section -->
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                 <div class="d-flex align-items-start mb-3">
-                    <img src="{% static 'images/founder-1.jpg' %}" alt="Hon. Ismaila Muhammed Attah"
+                    <img src="{% founder_image 'founder-1.jpg' width=60 height=60 crop='fill' gravity='face' %}" alt="Hon. Ismaila Muhammed Attah"
                         class="rounded-circle me-3 border border-gold" width="60" height="60"
                         style="object-fit: cover;">
                     <div>
