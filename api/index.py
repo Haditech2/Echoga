@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+from django.shortcuts import render
 import os
 import sys
 from pathlib import Path
@@ -9,20 +11,34 @@ sys.path.insert(0, str(project_dir))
 # Set environment variables
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'echoga_project.settings')
 
-# Import Django
+# Import and setup Django
 import django
-from django.conf import settings
-from django.core.wsgi import get_wsgi_application
-
-# Configure Django
 django.setup()
 
-# Get WSGI application
-app = get_wsgi_application()
+from foundation.views import home
 
-# Vercel serverless function handler
-def handler(event, context):
+def handler(request, context=None):
     """
-    Vercel serverless function handler for Django
+    Vercel handler that serves the Django home page
     """
-    return app(event, context)
+    try:
+        # Create a mock request object for Django
+        from django.test import RequestFactory
+        factory = RequestFactory()
+        django_request = factory.get('/')
+        
+        # Call the home view
+        response = home(django_request)
+        return response
+        
+    except Exception as e:
+        return HttpResponse(f"""
+        <html>
+        <head><title>ECHOGA Foundation</title></head>
+        <body>
+            <h1>ECHOGA Foundation</h1>
+            <p>Website is loading... Please refresh the page.</p>
+            <p>Error details: {str(e)}</p>
+        </body>
+        </html>
+        """, content_type='text/html')
