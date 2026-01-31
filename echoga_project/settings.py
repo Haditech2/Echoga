@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-w(%11(d0^&5g2hzx2bx_551j)7ktsmiirxe=)8wk%1sqlyv1%c')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool) if config('DEBUG', default=None) else False
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -110,11 +110,11 @@ WSGI_APPLICATION = 'echoga_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# Use SQLite for development and production (since Vercel doesn't support persistent databases)
+# Use SQLite for development and production
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': ':memory:',  # Use in-memory database for serverless
+        'NAME': BASE_DIR / 'db.sqlite3',  # Use file-based database
     }
 }
 

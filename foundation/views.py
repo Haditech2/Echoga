@@ -51,9 +51,16 @@ def help_request(request):
 
 def home(request):
     """Home page view"""
-    # Get featured news and testimonials
-    featured_news = NewsArticle.objects.filter(is_featured=True)[:3]
-    testimonials = Testimonial.objects.filter(is_active=True)[:6]
+    # Get featured news and testimonials, handle if models don't exist yet
+    try:
+        featured_news = NewsArticle.objects.filter(is_featured=True)[:3]
+    except Exception:
+        featured_news = []
+    
+    try:
+        testimonials = Testimonial.objects.filter(is_active=True)[:6]
+    except Exception:
+        testimonials = []
     
     # Handle newsletter subscription
     newsletter_form = NewsletterForm()
@@ -86,10 +93,13 @@ def gallery(request):
     # Get all active gallery images
     category = request.GET.get('category', 'all')
     
-    if category and category != 'all':
-        images = GalleryImage.objects.filter(is_active=True, category=category)
-    else:
-        images = GalleryImage.objects.filter(is_active=True)
+    try:
+        if category and category != 'all':
+            images = GalleryImage.objects.filter(is_active=True, category=category)
+        else:
+            images = GalleryImage.objects.filter(is_active=True)
+    except Exception:
+        images = []
     
     # Pagination
     paginator = Paginator(images, 12)  # Show 12 images per page
@@ -106,7 +116,10 @@ def gallery(request):
 def news(request):
     """News and Impact page view"""
     # Get all news articles
-    news_list = NewsArticle.objects.all()
+    try:
+        news_list = NewsArticle.objects.all()
+    except Exception:
+        news_list = []
     
     # Pagination
     paginator = Paginator(news_list, 6)  # Show 6 articles per page
@@ -114,7 +127,10 @@ def news(request):
     page_obj = paginator.get_page(page_number)
     
     # Get featured article
-    featured_article = NewsArticle.objects.filter(is_featured=True).first()
+    try:
+        featured_article = NewsArticle.objects.filter(is_featured=True).first()
+    except Exception:
+        featured_article = None
     
     context = {
         'page_obj': page_obj,

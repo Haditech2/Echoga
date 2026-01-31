@@ -18,9 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponse
+from django.shortcuts import redirect
+
+def favicon_view(request):
+    """Serve favicon.ico"""
+    return redirect(settings.STATIC_URL + 'favicon.ico')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('favicon.ico', favicon_view),
     path('', include('foundation.urls')),
 ]
 
