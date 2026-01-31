@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '.vercel.app',
     '.now.sh',
+    'echoga-fre9-6nqkpcpxv-ademu-abdullahadis-projects.vercel.app',
     'echoga-fre9-70us9arrh-ademu-abdullahadis-projects.vercel.app',
     'echoga-fre9-9s88hn9z8-ademu-abdullahadis-projects.vercel.app',
     '*'  # Allow all hosts for now during deployment testing
