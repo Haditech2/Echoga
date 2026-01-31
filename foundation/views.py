@@ -1,11 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import NewsArticle, Testimonial, GalleryImage
 from .forms import ContactForm, NewsletterForm, VolunteerForm, HelpRequestForm
+
+
+def health_check(request):
+    """Simple health check endpoint for debugging"""
+    import django
+    return HttpResponse(f"ECHOGA Foundation Django App is running! Django version: {django.get_version()}", content_type="text/plain")
 
 
 def help_request(request):

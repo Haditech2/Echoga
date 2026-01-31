@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('health/', views.health_check, name='health_check'),  # Add health check
     path('about-founder/', views.about_founder, name='about_founder'),
     path('about-foundation/', views.about_foundation, name='about_foundation'),
     path('programs/', views.programs, name='programs'),
